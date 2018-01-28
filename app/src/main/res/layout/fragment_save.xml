@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    >
+
+    <RadioGroup
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_type"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:layout_gravity="center_vertical"
+            />
+        <RadioButton
+            android:id="@+id/gif"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:text="@string/gif_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/mp4"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:text="@string/mp4_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            />
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/save"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@string/save_txt"
+            android:background="@drawable/rc_btn_press_light_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+        <Button
+            android:id="@+id/share"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:text="@string/share"
+            android:background="@drawable/rc_btn_press_light_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+

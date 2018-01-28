@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">GifU</string>
+    <string name="cancel_txt">取消</string>
+    <string name="ok_txt">确定</string>
+    <string name="desc"></string>
+    <string name="backward">逆序</string>
+    <string name="speed_slow">慢</string>
+    <string name="speed_fast">快</string>
+    <string name="edit_hint">输入您的内容</string>
+    <string name="gif_making">文件制作中...</string>
+    <string name="gif_make_success">文件制作成功</string>
+    <string name="gif_make_failed">文件制作失败</string>
+    <string name="max_image_selected">已超过最大图片数量</string>
+    <string name="no_image_selected">没有已选图片</string>
+    <string name="file_delete_success">文件已删除</string>
+    <string name="file_delete_failed">文件删除失败</string>
+    <string name="delete_confirm_msg">确定要删除？</string>
+    <string name="delete_txt">删除</string>
+    <string name="gif_txt">GIF</string>
+    <string name="reset_txt">重置</string>
+    <string name="reset_confirm_msg">确定重置？</string>
+    <string name="image_process">正在处理...</string>
+    <string name="max_frames">最大帧数:</string>
+    <string name="save_path">存储路径:</string>
+    <string name="update_txt">升级</string>
+    <string name="select_path">选择存储路径</string>
+    <string name="confirm_txt">确定</string>
+
+    <string name="action_settings">设置</string>
+    <string name="empty_data">亲，您还没有作品哦</string>
+    <string name="cur_version">当前版本：</string>
+    <string name="title_activity_menu">GifU</string>
+    <string name="title_activity_album">本地相册</string>
+    <string name="title_activity_setting">设置</string>
+    <string name="manual_mode">单拍</string>
+    <string name="auto_mode">连拍</string>
+    <string name="select_frame">请选择要编辑的图像</string>
+    <string name="select_all">全选</string>
+    <string name="select_none">清除</string>
+    <string name="mp4_txt">MP4</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="save_txt">本地保存</string>
+    <string name="share">与朋友分享</string>
+    <string name="save_type">文件格式:</string>
+    <string name="max_frames_num">150</string>
+</resources>

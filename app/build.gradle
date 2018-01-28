@@ -1,0 +1,134 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.zgs.gifu"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //renderscriptTargetApi 19
+        //renderscriptSupportModeEnabled true
+
+        ndk {
+            moduleName "image_util" //编译生成so库的名字，注意不要lib，和.so加进来  ,而且要和上面loadLibrary里面的参数一致
+            abiFilters "armeabi" //编译支持的平台
+            //abiFilters "armeabi-v7a"
+            //abiFilters "arm64-v8a"
+            abiFilters "x86"
+            //abiFilters "x86_64"
+            ldLibs "log"
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk').absolutePath
+        }
+    }
+    sourceSets.main {
+        jni.srcDirs = []
+//        jniLibs.srcDirs = ['libs']
+        jniLibs.srcDirs = ['src/main/jniLibs']//设置目标的so存放路径
+    }
+    productFlavors {
+        generic {
+            ndk {
+                abiFilters "armeabi"
+                //abiFilters "armeabi-v7a"
+            }
+        }
+        allcpu {
+            ndk {
+                abiFilters "armeabi"
+                //abiFilters "armeabi-v7a"
+                //abiFilters "arm64-v8a"
+                abiFilters "x86"
+                //abiFilters "x86_64"
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            //minifyEnabled true
+            //zipAlignEnabled true
+            //shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main { assets.srcDirs = ['src/main/assets', 'src/main/assets/fonts', 'src/main/assets/'] }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi' //select ABIs to build APKs for
+            universalApk true //generate an additional APK that contains all the ABIs
+        }
+    }
+    // map for the version code
+    project.ext.versionCodes = ['': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, 'x86': 4, 'x86_64': 5]
+    android.applicationVariants.all { variant ->
+        // assign different version code for each output
+        variant.outputs.each { output ->
+            output.versionCodeOverride =
+                    project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), 0) * 1000000 + android.defaultConfig.versionCode
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'   // aar目录
+    }
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/javacpp.jar')
+    compile files('libs/javacv.jar')
+    compile files('libs/opencv.jar')
+    compile files('libs/jcodec-0.1.9.jar')
+    compile(name: 'alisdk-feedback-2.5.2', ext: 'aar')
+    compile(name: 'securityguardaar3-5.1.96', ext: 'aar')
+    compile files('libs/app-monitor-sdk-2.5.1.1_for_bc_proguard.jar')
+    compile files('libs/utdid4all-1.1.5.3_proguard.jar')
+    compile(name: 'alisdk-hotfix-2.0.0', ext: 'aar')
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.5'
+    compile 'com.android.support:support-v4:25.3.0'
+    compile 'com.android.support:recyclerview-v7:25.3.0'
+    compile 'com.android.support:cardview-v7:25.3.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    compile 'com.github.chrisbanes:PhotoView:1.3.1'
+    compile 'com.android.support:design:25.3.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.7.8'
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    testCompile 'junit:junit:4.12'
+    /*
+            testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+            debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+            releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+            */
+    compile name: 'YoumiSdk_v7.3.0_2017-05-08', ext: 'aar'
+}

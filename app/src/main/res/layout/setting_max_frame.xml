@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/max_frame_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/max_frames"
+        android:gravity="center_horizontal"
+        android:textColor="@color/gray"
+        android:padding="5dp"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@+id/max_frame_title"
+        >
+
+        <TextView
+            android:id="@+id/max_frames_text"
+            android:layout_width="wrap_content"
+            android:minEms="3"
+            android:layout_height="wrap_content"
+            android:text="@string/max_frames_num"
+            android:gravity="center_horizontal"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            />
+        <SeekBar
+            android:id="@+id/max_frames_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="148"
+            android:minHeight="5dp"
+            android:maxHeight="5dp"
+            android:progressDrawable="@drawable/seekbar_style"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:id="@+id/gv_layout">
+
+	<android.support.v7.widget.CardView
+		android:id="@+id/sticker_view"
+		android:layout_margin="4dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center">
+		<com.zgs.gifu.view.GifPlayView
+			android:id="@+id/gif_playview"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:scaleType="centerCrop"
+			/>
+		<com.zgs.gifu.view.TagView
+			android:id="@+id/tagview"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			/>
+	</android.support.v7.widget.CardView>
+
+	<RelativeLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@android:color/transparent"
+		>
+
+		<ImageButton
+			android:id="@+id/gv_reset"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6dp"
+			android:layout_marginRight="6dp"
+			android:background="@drawable/circle_btn_press_light_selector"
+			android:src="@drawable/reset"
+			/>
+
+		<RadioGroup
+			android:id="@+id/radioGroup"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_toRightOf="@+id/gv_reset"
+			>
+
+			<RadioButton
+				style="@style/tabStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:checked="true"
+				android:background="@drawable/circle_btn_press_light_selector"
+				android:drawableTop="@drawable/speed"
+				android:id="@+id/gv_speed"
+				/>
+			<RadioButton
+				style="@style/tabStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/circle_btn_press_light_selector"
+				android:drawableTop="@drawable/edit"
+				android:id="@+id/gv_edit"
+				/>
+			<!--
+			<RadioButton
+				style="@style/tabStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:drawableTop="@drawable/btn_3d_selector"
+				android:id="@+id/gv_image_filter" />
+			-->
+		</RadioGroup>
+
+		<ImageButton
+			android:id="@+id/gv_image_filter"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6dp"
+			android:layout_marginRight="6dp"
+			android:background="@drawable/circle_btn_press_light_selector"
+			android:src="@drawable/cut"
+			android:layout_toRightOf="@+id/radioGroup"
+			/>
+
+		<ImageButton
+			android:id="@+id/gv_save"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6dp"
+			android:layout_marginRight="6dp"
+			android:background="@drawable/circle_btn_press_light_selector"
+			android:src="@drawable/save"
+			android:layout_alignParentRight="true"
+			/>
+	</RelativeLayout>
+
+	<FrameLayout
+        android:id="@+id/fragment_container"  
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:gravity="center"
+        />
+
+</LinearLayout>

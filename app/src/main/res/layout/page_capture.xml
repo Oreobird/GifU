@@ -1,0 +1,151 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<SurfaceView
+		android:id="@+id/camera_view"
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		/>
+	<com.zgs.gifu.view.CaptureMaskView
+		android:id="@+id/view_mask"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+
+	<RelativeLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+
+		<TableLayout
+			android:id="@+id/table"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:stretchColumns="*"
+			>
+			<TableRow android:gravity="center_horizontal">
+				<LinearLayout
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_gravity="center"
+					android:gravity="center_vertical"
+					>
+					<ImageButton
+						android:id="@+id/capture_close"
+						android:contentDescription="@string/desc"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/circle_btn_press_selector"
+						android:src="@drawable/close"
+						android:layout_marginLeft="8dp"
+						android:layout_marginRight="8dp"
+						/>
+					<ImageView
+						android:id="@+id/capture_album"
+						android:contentDescription="@string/desc"
+						android:layout_width="42dp"
+						android:layout_height="42dp"
+						android:scaleType="centerCrop"
+						android:layout_marginLeft="8dp"
+						android:layout_marginRight="8dp"
+						/>
+				</LinearLayout>
+
+				<ImageButton
+					android:id="@+id/capture_record"
+					android:contentDescription="@string/desc"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:background="@color/transparent"
+					android:src="@drawable/ic_stop"
+					android:layout_marginBottom="5dp"
+					/>
+
+
+				<RelativeLayout
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:orientation="horizontal"
+					android:gravity="center_vertical"
+					android:layout_gravity="center">
+
+					<TextSwitcher
+						android:id="@+id/capture_mode"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						/>
+
+					<ImageButton
+						android:id="@+id/capture_done"
+						android:contentDescription="@string/desc"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/circle_btn_press_selector"
+						android:src="@drawable/ok"
+						android:visibility="invisible"
+						/>
+				</RelativeLayout>
+
+			</TableRow>
+
+		</TableLayout>
+
+		<ProgressBar
+			android:id="@+id/capture_proBar"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/table"
+			android:max="30"
+			android:maxHeight="20dp"
+			android:minHeight="20dp"
+			android:progress="0"
+			android:visibility="visible"
+			/>
+
+		<ImageButton
+			android:id="@+id/capture_flash"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/circle_btn_press_selector"
+			android:src="@drawable/camera_flash_off"
+			android:layout_marginLeft="16dp"
+			android:layout_above="@+id/capture_proBar"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="16dp"
+			/>
+
+		<!--
+		<ImageButton
+			android:id="@+id/capture_ratio"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/transparent"
+			android:src="@drawable/btn_mode_auto_selector"
+			android:layout_above="@+id/capture_proBar"
+			android:layout_toLeftOf="@+id/capture_switch_cam"
+			/>
+		-->
+		<ImageButton
+			android:id="@+id/capture_switch_cam"
+			android:contentDescription="@string/desc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/circle_btn_press_selector"
+			android:src="@drawable/camera_switcher"
+			android:layout_alignTop="@+id/capture_flash"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true"
+			android:layout_marginRight="16dp"
+			android:layout_marginEnd="16dp" />
+
+	</RelativeLayout>
+
+</FrameLayout>

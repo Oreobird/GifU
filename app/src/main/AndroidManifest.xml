@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zgs.gifu"
+    >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".GifApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MenuActivity"
+            android:label="@string/title_activity_menu" />
+        <activity
+            android:name=".activity.CaptureActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ImportActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AlbumActivity"
+            android:label="@string/title_activity_album" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/title_activity_setting" />
+        <activity
+            android:name=".activity.GifViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.AlbumDetailActivity"
+            android:label="@string/title_activity_album" />
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="99945-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="ad4dfa9556e3d9e3781f90c0d44af490" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCiNdo1sHSjgnJLsch5gDZdCIFbma7wQVFVspfVKkInWOWs8uoo58WQ1VieKMJkg//uyCORZgqLc75Vs4iZ+/D2rUiOOFhS+VZ54DlRVRyj7pCBiE32BqK448KAWGjhAjpF2Eq7eai5qgvy1V3VxcRUaWXTtoExZBWs2uvU7dl1780BTeJpsZ5gSzIalg+aF7puDCz5tyo3eO5gcqdALXrPpI+1oI9v3Igz9HJ5N8Dyw10XpMa6IXMNvztRFv8q0V9xsxPWj+in8JuT8mJu74nIwpA2r6gVi+L0AmvNjnEFYfAuM9uzZ8d8RUDmqwM90aygJI2If6y1VnO2X9QyJ7qjAgMBAAECggEBAJ1wOWfs6XieLsMrPhI3kAxCKhO3GWVVcFUGL3oVNvorvVhcuUuUkVwexpFTrEGVIL4pAOSprshlQbK6u3YBY4J487geFhQKr5VBPUCkpFS0QwuGOWz2Sc+8OFcL+FeUKu0JnpdR4KK72jcKQrYu6nyng862D7TZmHQaU9VqOavN1Y+wljRWne2k/PQFhIkkf+NTvq2NieiTw0KLqpBmT/O/DdlSa3Ns70ovIFyN9WqaMIfE35W+PgAVkKiSEMGm+UMMHTQqcPCT8RM+kc5pOATNDroiIB+Bq6VWam2b838HhkwjiUmQmo5EzlYYHwCmFN0XuiNQi/WfmPspT/MjNbkCgYEAzIL65YdaPa7sZyrxgIgSZp6Bdbk6BWRJUDCXmC7tPTjGPf+1yYyZQIy8Gd2hnrP+n0ngEVPQzNBimfNctNEyfcFG0a13PEJJ4MTVHQIm4i05sPA4bCKVebei6IeYs4BL6cjLLwBjMGyQYsb0rctuVwHNOb9urM75R4M4FwEy8fUCgYEAywyBE+zasN2YyN0H/fs5tAgAEJKJiKBO+WD66LRqkNVrJjD0qIZk1oqsCeuZFoLh2clyyWQuxXw7TssJX0yYGLN/BBqypUspdCkiO7nLUDB9BYtW0KnAiY6o2YpLv9WGf7LUntFtm3DMWUTDyJdZeN6Cw4QO3Y+3Y7ASvw+UYzcCgYBZDrSpXU7Ly6/AoW+3VAoHTAD+PeHpVSmj1PU+3TiMT3vspb0I/sQB2wdSkDQAQ0ufG/GKOiCUAC7f8Z0uVGcTYiYvysVApXE8gxp23mgGWEFmLsWzOUA0V+aGMf4qNLVaIglw9086WBxsF02XnR34n506B4XvlNXy8U5sniYMPQKBgFqvbP7PLCUN82zSev1ONMlZQV4ldFOW9W6fh7Bi0614A/D8sGiMDYFcUdXkaW0Ka4BvXlrf6Zu+Dmb0e20asltl33afzeXRGeSNcoKmSk24Oj49qzpqdll5Y6Q1BfvZi8aAwkFkW8WurTW5Zo+yOP2os1JLKrB9vXRCcTzv4mAlAoGAT/oVYg/2ndgJshS+qHGczjB4CP0AxJno++Zbna6OquSpXcLhjGyCjfxR0l/OYpdWoOtm7XOv3Ilcd+cecR0Wl499b7YVhcxVOJr6P9j+3Xkb31xrlrejt3fk0C7x0p7mJzr6TeSBvWNVOrnQUZgtMWuyk/oF6diYq/okwGZ91dM=" />
+    </application>
+
+</manifest>
